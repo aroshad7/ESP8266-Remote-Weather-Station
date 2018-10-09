@@ -102,7 +102,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    if (client.connect("ESP8266Client", "aroshad7", "mqtt account password")) {
+    if (client.connect("ESP8266Client", "mqtt username", "mqtt account password")) {
       Serial.println("connected");
       client.publish(systemData, "System Booting Complete!");
       client.subscribe(systemData);
